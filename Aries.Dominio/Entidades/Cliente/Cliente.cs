@@ -11,8 +11,8 @@ namespace Aries.Dominio.Entidades.Cliente
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public virtual List<Documento >Documentos { get; set; }
-        public virtual List<Email> Emails { get; set; }
+        public List<Documento >Documentos { get; set; }
+        public List<Email> Emails { get; set; }
 
         public Cliente()
         {

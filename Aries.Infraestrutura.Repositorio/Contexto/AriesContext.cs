@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.Repositorio.Contexto
 {
-    public class AriesContext : DbContext
+    public abstract class AriesContext : DbContext
     {
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Documento> Documentos { get; set; }
+        public DbSet<Email> Emails { get; set; }
 
-        protected AriesContext(DbConnection connection) : base(connection, true) { }
+        public AriesContext(DbConnection connection) : base(connection, true) { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

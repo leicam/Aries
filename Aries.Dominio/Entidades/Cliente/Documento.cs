@@ -10,12 +10,13 @@ namespace Aries.Dominio.Entidades.Cliente
     {
         public Guid Id { get; private set; }
         public string Valor { get; private set; }
-        public virtual Cliente Cliente { get; private set; }
-
+        public Cliente Cliente { get; private set; }
+        public Guid IdCliente { get; private set; }
         public Documento(Cliente cliente, string documento)
         {
             Id = new Guid();
             Cliente = cliente;
+            IdCliente = cliente.Id;
             Valor = documento;
             ValidarDocumento();
         }

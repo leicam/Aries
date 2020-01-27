@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.Repositorio.Contexto
 {
-    internal class DataInitializer : MigrateDatabaseToLatestVersion<DataContext, MigrationsConfigurstions> { }
+    internal class DataInitializer : MigrateDatabaseToLatestVersion<DataContext, Configuration> { }
 }

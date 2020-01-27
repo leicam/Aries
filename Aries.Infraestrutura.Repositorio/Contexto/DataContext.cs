@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 namespace Aries.Infraestrutura.Repositorio.Contexto
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    internal class DataContext : AriesContext
+    public class DataContext : AriesContext
     {
-        protected DataContext() : base((MySqlConnectionManager.New().GetConnection() as MySqlConnection))
+        public DataContext() : base((MySqlConnectionManager.New().GetConnection() as MySqlConnection))
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

@@ -1,5 +1,6 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.Aplicacao.Servicos;
+using Aries.Infraestrutura.Repositorio.Contexto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using Aries.Infraestrutura.Repositorio.Repositorios;
 using Aries.Infraestrutura.Repositorio.UnitOfWork;
@@ -23,6 +24,10 @@ namespace Aries.Infraestrutura.IoC
             #region Repositorios
             _container.Register<IClienteRepositorio, ClienteRepositorio>(Lifestyle.Singleton);
             #endregion Repositorios
+
+            #region Contexto
+            _container.Register<DataContext>(Lifestyle.Singleton);
+            #endregion Contexto
 
             #region Unit of Work
             _container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Singleton);
