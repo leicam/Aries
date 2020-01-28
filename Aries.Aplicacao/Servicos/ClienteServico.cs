@@ -1,5 +1,6 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.Dominio.Builders;
+using Aries.Dominio.Entidades.Cliente;
 using Aries.DTO.Cliente;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using System;
@@ -16,7 +17,7 @@ namespace Aries.Aplicacao.Servicos
             _clienteRepositorio = clienteRepositorio;
         }
 
-        public string Adicionar(ClienteDTO dto)
+        public string AddOrUpdate(ClienteDTO dto)
         {
             try
             {
@@ -27,7 +28,7 @@ namespace Aries.Aplicacao.Servicos
                     .ComSobrenome(dto.Sobrenome)
                     .Build();
 
-                _clienteRepositorio.Adicionar(registro);
+                _clienteRepositorio.AdicionarOuAlterar(registro);
                 return "Cliente cadastrado com sucesso!";
             }
             catch(ArgumentException ex)
@@ -36,12 +37,12 @@ namespace Aries.Aplicacao.Servicos
             }
         }
 
-        public List<ClienteDTO> Listar()
+        public List<ClienteDTO> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public string Remover(ClienteDTO dto)
+        public string Remove(ClienteDTO dto)
         {
             throw new NotImplementedException();
         }

@@ -23,7 +23,7 @@ namespace Aries.WPF.Views.Cliente.Commands
 
             try
             {
-                _clienteServico.Adicionar(new ClienteDTO(
+                _clienteServico.AddOrUpdate(new ClienteDTO(
                     vm.Cliente.Nome, vm.Cliente.Sobrenome,
                     vm.Cliente.Documento, vm.Cliente.Email));
             }

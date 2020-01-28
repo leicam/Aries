@@ -1,5 +1,6 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.Aplicacao.Servicos;
+using Aries.Dominio.Entidades.Cliente;
 using Aries.Infraestrutura.Repositorio.Contexto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using Aries.Infraestrutura.Repositorio.Repositorios;
@@ -26,7 +27,7 @@ namespace Aries.Infraestrutura.IoC
             #endregion Repositorios
 
             #region Contexto
-            _container.Register<DataContext>(Lifestyle.Singleton);
+            _container.Register<AriesContext, DataContext>(Lifestyle.Singleton);
             #endregion Contexto
 
             #region Unit of Work

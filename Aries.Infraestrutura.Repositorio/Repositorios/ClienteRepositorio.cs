@@ -1,4 +1,5 @@
 ﻿using Aries.Dominio.Entidades.Cliente;
+using Aries.Infraestrutura.Repositorio.Contexto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,23 @@ using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.Repositorio.Repositorios
 {
-    public class ClienteRepositorio : IClienteRepositorio
+    public class ClienteRepositorio : AbstractRepositorio<Cliente>, IClienteRepositorio
     {
-        private List<Cliente> Clientes { get; set; } = new List<Cliente>();
+        public ClienteRepositorio(AriesContext context) : base(context) { }
 
-        public void Adicionar(Cliente cliente) => Clientes.Add(cliente);
-        public List<Cliente> Listar() => Clientes;
-        public void Remover(Cliente cliente) => Clientes.Remove(cliente);
+        public IEnumerable<Cliente> CarregarTodos()
+            => GetAll();
+
+        public void AdicionarOuAlterar(Cliente cliente)
+        {
+            AddOrUpdate(cliente);
+            SaveChanges();
+        }
+
+        public void Remover(Cliente cliente)
+        {
+            Remove(cliente);
+            SaveChanges();
+        }
     }
 }

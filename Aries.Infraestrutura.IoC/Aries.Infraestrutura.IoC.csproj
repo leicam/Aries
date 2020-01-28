@@ -56,6 +56,10 @@
       <Project>{de268d44-0ddf-42a6-9455-1aa3834cb6f1}</Project>
       <Name>Aries.Aplicacao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Aries.Dominio\Aries.Dominio.csproj">
+      <Project>{3bc99ae5-cc4b-4f96-b725-67869278a081}</Project>
+      <Name>Aries.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Aries.Infraestrutura.Repositorio\Aries.Infraestrutura.Repositorio.csproj">
       <Project>{2de80080-a4af-477b-b4df-7156ebf01f79}</Project>
       <Name>Aries.Infraestrutura.Repositorio</Name>

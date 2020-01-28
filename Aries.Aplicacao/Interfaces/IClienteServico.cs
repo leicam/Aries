@@ -9,8 +9,8 @@ namespace Aries.Aplicacao.Interfaces
 {
     public interface IClienteServico
     {
-        string Adicionar(ClienteDTO dto);
-        string Remover(ClienteDTO dto);
-        List<ClienteDTO> Listar();
+        string AddOrUpdate(ClienteDTO dto);
+        string Remove(ClienteDTO dto);
+        List<ClienteDTO> GetAll();
     }
 }

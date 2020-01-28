@@ -9,8 +9,8 @@ namespace Aries.Infraestrutura.Repositorio.Interfaces
 {
     public interface IClienteRepositorio
     {
-        void Adicionar(Cliente cliente);
+        IEnumerable<Cliente> CarregarTodos();
+        void AdicionarOuAlterar(Cliente cliente);
         void Remover(Cliente cliente);
-        List<Cliente> Listar();
     }
 }

@@ -16,8 +16,8 @@ namespace Aries.Infraestrutura.Repositorio.Contexto
     {
         public DataContext() : base((MySqlConnectionManager.New().GetConnection() as MySqlConnection))
         {
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = true;
             Database.SetInitializer(new DataInitializer());
         }
     }

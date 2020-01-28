@@ -1,4 +1,5 @@
-﻿using Aries.Infraestrutura.Repositorio.Interfaces;
+﻿using Aries.Dominio.Entidades.Cliente;
+using Aries.Infraestrutura.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
