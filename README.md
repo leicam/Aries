@@ -6,6 +6,5 @@
  - DDD.
  - Teste Unitário.
  - Entity Framework.
- - Desing Patterns:
-  - Unit of Work.
-  - Repository.
+ - Unit of Work.
+ - Repository.
