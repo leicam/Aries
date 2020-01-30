@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{9A9074F0-02D3-4DCB-A3DA-1E11D09BC871}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Apresentacao", "00 - Apresentacao", "{9A9074F0-02D3-4DCB-A3DA-1E11D09BC871}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Aplicacao", "1 - Aplicacao", "{AFFC3F5C-7A2F-4777-A313-7006871FE862}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Aplicacao", "01 - Aplicacao", "{AFFC3F5C-7A2F-4777-A313-7006871FE862}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio", "{308F0ED2-2957-42EC-9FF3-AA1E16B268BF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Dominio", "02 - Dominio", "{308F0ED2-2957-42EC-9FF3-AA1E16B268BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestrutura", "3 - Infraestrutura", "{8D6032DC-2041-4571-9056-67FA3FAA05A1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Infraestrutura", "03 - Infraestrutura", "{8D6032DC-2041-4571-9056-67FA3FAA05A1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Testes", "4 - Testes", "{44A68C81-0D45-49DD-97E2-F45278D78584}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Testes", "04 - Testes", "{44A68C81-0D45-49DD-97E2-F45278D78584}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Repositorio", "3.1 - Repositorio", "{04A37AB9-9491-4621-994B-773B3EF57FE6}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - Inversao de Controle (IoC)", "3.2 - Inversao de Controle (IoC)", "{3FBB5240-C1E2-4D61-A226-0E4516BEC9FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aries.Infraestrutura.IoC", "Aries.Infraestrutura.IoC\Aries.Infraestrutura.IoC.csproj", "{2A15A3B6-B699-4308-A91C-BC7C4B487266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aries.Connector", "Aries.Connector\Aries.Connector.csproj", "{4F67247D-B1AC-4C0F-9253-BB5942759FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{2A15A3B6-B699-4308-A91C-BC7C4B487266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A15A3B6-B699-4308-A91C-BC7C4B487266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A15A3B6-B699-4308-A91C-BC7C4B487266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F67247D-B1AC-4C0F-9253-BB5942759FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F67247D-B1AC-4C0F-9253-BB5942759FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F67247D-B1AC-4C0F-9253-BB5942759FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F67247D-B1AC-4C0F-9253-BB5942759FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{DE268D44-0DDF-42A6-9455-1AA3834CB6F1} = {AFFC3F5C-7A2F-4777-A313-7006871FE862}
 		{3FBB5240-C1E2-4D61-A226-0E4516BEC9FB} = {8D6032DC-2041-4571-9056-67FA3FAA05A1}
 		{2A15A3B6-B699-4308-A91C-BC7C4B487266} = {3FBB5240-C1E2-4D61-A226-0E4516BEC9FB}
+		{4F67247D-B1AC-4C0F-9253-BB5942759FD5} = {9A9074F0-02D3-4DCB-A3DA-1E11D09BC871}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C701B908-AD44-4A8B-BE36-7D4E8DA555BA}

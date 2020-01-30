@@ -1,4 +1,4 @@
-﻿using Aries.Infraestrutura.IoC;
+﻿using Aries.Connector;
 using Aries.WPF.Views.Cliente;
 using SimpleInjector;
 using System;
@@ -13,15 +13,13 @@ namespace Aries.WPF.Classes
     {
         [STAThread]
         public static void Main()
-            => StartApplication(WpfInstaller.GetContainer());
+            => StartApplication();
 
-        private static void StartApplication(Container container)
+        private static void StartApplication()
         {
             try
             {
-                MainWindow
-                    .Factory(WindowInstances.Factory(container))
-                    .ShowDialog();
+                GerenciadorTelas.MainWindow();
             }
             catch (Exception ex)
             {

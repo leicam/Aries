@@ -23,14 +23,7 @@ namespace Aries.WPF.Views.Cliente
         #endregion
 
         #region Comandos
-        public ICadastrarClienteCommand CadastrarCliente { get; }
+        public CadastrarClienteCommand CadastrarCliente { get; private set; } = new CadastrarClienteCommand();
         #endregion
-
-        #region Construtores
-        public ClienteViewModel(ICadastrarClienteCommand cadastrarCliente)
-        {
-            CadastrarCliente = cadastrarCliente;
-        }
-        #endregion Construtores
     }
 }

@@ -19,20 +19,10 @@ namespace Aries.WPF
 {
     public partial class MainWindow : Window
     {
-        private WindowInstances WindowInstances { get; set; }
-
-        private MainWindow(WindowInstances windowInstances)
-        {
-            WindowInstances = windowInstances;
-            InitializeComponent();
-        }
-
-        internal static MainWindow Factory(WindowInstances windowInstances)
-            => new MainWindow(windowInstances);
+        public MainWindow()
+            => InitializeComponent();
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            WindowInstances.ucCadastrarCliente.ShowDialog();
-        }
+            => GerenciadorTelas.CadastrarCliente();
     }
 }

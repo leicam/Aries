@@ -4,12 +4,10 @@ namespace Aries.WPF.Views.Cliente
 {
     public partial class ucCadastrarCliente : Window
     {
-        public ucCadastrarCliente(ClienteViewModel vm)
+        public ucCadastrarCliente()
         {
             InitializeComponent();
-            DataContext = vm;
+            DataContext = new ClienteViewModel();
         }
-
-        //public static void Cadastrar() => new ucCadastrarCliente().ShowDialog();
     }
 }

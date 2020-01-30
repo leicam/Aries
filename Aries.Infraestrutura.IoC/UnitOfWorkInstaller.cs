@@ -1,9 +1,5 @@
-﻿using Aries.Aplicacao.Interfaces;
-using Aries.Aplicacao.Servicos;
-using Aries.Dominio.Entidades.Cliente;
-using Aries.Infraestrutura.Repositorio.Contexto;
+﻿using Aries.Infraestrutura.Repositorio.Contexto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
-using Aries.Infraestrutura.Repositorio.Repositorios;
 using Aries.Infraestrutura.Repositorio.UnitOfWork;
 using SimpleInjector;
 using System;
@@ -14,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.IoC
 {
-    internal static class ServiceInstaller
+    internal static class UnitOfWorkInstaller
     {
         internal static Container Factory(Container container)
         {
-
-            container.Register<IClienteServico, ClienteServico>(Lifestyle.Singleton);
+            container.Register<AriesContext, DataContext>(Lifestyle.Singleton);
+            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Singleton);
 
             return container;
         }

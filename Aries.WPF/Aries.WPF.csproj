@@ -79,14 +79,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\GerenciadorTelas.cs" />
     <Compile Include="Classes\Program.cs" />
-    <Compile Include="Classes\WindowInstances.cs" />
-    <Compile Include="Classes\WpfInstaller.cs" />
     <Compile Include="Models\Cliente\ClienteModel.cs" />
     <Compile Include="Views\AbstractViewModel.cs" />
     <Compile Include="Views\Cliente\ClienteViewModel.cs" />
     <Compile Include="Views\Cliente\Commands\CadastrarClienteCommand.cs" />
-    <Compile Include="Views\Cliente\Commands\ICadastrarClienteCommand.cs" />
     <Compile Include="Views\Cliente\ucCadastrarCliente.xaml.cs">
       <DependentUpon>ucCadastrarCliente.xaml</DependentUpon>
     </Compile>
@@ -139,17 +137,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aries.Aplicacao\Aries.Aplicacao.csproj">
-      <Project>{de268d44-0ddf-42a6-9455-1aa3834cb6f1}</Project>
-      <Name>Aries.Aplicacao</Name>
+    <ProjectReference Include="..\Aries.Connector\Aries.Connector.csproj">
+      <Project>{4f67247d-b1ac-4c0f-9253-bb5942759fd5}</Project>
+      <Name>Aries.Connector</Name>
     </ProjectReference>
     <ProjectReference Include="..\Aries.DTO\Aries.DTO.csproj">
       <Project>{ae71cd71-e741-484d-b0fa-9b422a9105b5}</Project>
       <Name>Aries.DTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Aries.Infraestrutura.IoC\Aries.Infraestrutura.IoC.csproj">
-      <Project>{2a15a3b6-b699-4308-a91c-bc7c4b487266}</Project>
-      <Name>Aries.Infraestrutura.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

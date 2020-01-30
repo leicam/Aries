@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Aries.WPF.Classes
 {
-    internal abstract class AbstractCommand : ICommand
+    public abstract class AbstractCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 

@@ -17,7 +17,7 @@ namespace Aries.Aplicacao.Servicos
             _clienteRepositorio = clienteRepositorio;
         }
 
-        public string AddOrUpdate(ClienteDTO dto)
+        public void AddOrUpdate(ClienteDTO dto)
         {
             try
             {
@@ -29,7 +29,6 @@ namespace Aries.Aplicacao.Servicos
                     .Build();
 
                 _clienteRepositorio.AdicionarOuAlterar(registro);
-                return "Cliente cadastrado com sucesso!";
             }
             catch(ArgumentException ex)
             {
@@ -42,7 +41,7 @@ namespace Aries.Aplicacao.Servicos
             throw new NotImplementedException();
         }
 
-        public string Remove(ClienteDTO dto)
+        public void Remove(ClienteDTO dto)
         {
             throw new NotImplementedException();
         }
