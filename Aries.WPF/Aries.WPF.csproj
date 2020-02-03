@@ -85,6 +85,7 @@
     <Compile Include="Views\AbstractViewModel.cs" />
     <Compile Include="Views\Cliente\ClienteViewModel.cs" />
     <Compile Include="Views\Cliente\Commands\AbstractCadastroCliente.cs" />
+    <Compile Include="Views\Cliente\Commands\AtualizarCadastroClienteCommand.cs" />
     <Compile Include="Views\Cliente\Commands\CadastrarClienteCommand.cs" />
     <Compile Include="Views\Cliente\Commands\EfetivarCadastroClienteCommand.cs" />
     <Compile Include="Views\Cliente\Commands\ListarClientesCommand.cs" />
