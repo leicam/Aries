@@ -1,4 +1,5 @@
-﻿using Aries.WPF.Views.Cliente;
+﻿using Aries.WPF.Models.Cliente;
+using Aries.WPF.Views.Cliente;
 using Aries.WPF.Views.Home;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Aries.WPF.Classes
         #region Cliente
         public static void ListarCliente() => new ucListarCliente().ShowDialog();
         public static void CadastrarCliente() => new ucCadastrarCliente().ShowDialog();
-        public static void EditarCliente() => new ucCadastrarCliente()
+        public static void EditarCliente(ClienteModel cliente) => new ucCadastrarCliente(cliente);
         #endregion Cliente
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aries.DTO.Cliente;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,11 @@ namespace Aries.WPF.Views.Cliente.Commands
         {
             _vm = parameter as ClienteViewModel;
 
-            
+        }
+
+        protected override ClienteDTO MontarDados()
+        {
+            throw new NotImplementedException();
         }
     }
 }
