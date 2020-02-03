@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aries.WPF.Views.Cliente.Commands
+namespace Aries.WPF.Views.Home.Commands
 {
-    public class CadastrarClienteCommand : AbstractCommand
+    public class ListarClienteCommand : AbstractCommand
     {
         public override void Execute(object parameter)
-            => GerenciadorTelas.CadastrarCliente();
+            => GerenciadorTelas.ListarCliente();
     }
 }

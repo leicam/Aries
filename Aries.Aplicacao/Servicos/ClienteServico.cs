@@ -5,6 +5,7 @@ using Aries.DTO.Cliente;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Aries.Aplicacao.Servicos
 {
@@ -38,7 +39,21 @@ namespace Aries.Aplicacao.Servicos
 
         public List<ClienteDTO> GetAll()
         {
-            throw new NotImplementedException();
+            var result = _clienteRepositorio.CarregarTodos().ToList();
+            var clientes = new List<ClienteDTO>();
+
+            result.ToList().ForEach(x => 
+            { 
+                clientes.Add(
+                    new ClienteDTO(
+                        x.Nome,
+                        x.Sobrenome,
+                        x.Documentos.FirstOrDefault().Valor,
+                        x.Emails.FirstOrDefault().Valor
+                ));
+            });
+
+            return clientes;
         }
 
         public void Remove(ClienteDTO dto)

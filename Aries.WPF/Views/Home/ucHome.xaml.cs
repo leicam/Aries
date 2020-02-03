@@ -1,5 +1,6 @@
 ﻿using Aries.WPF.Classes;
 using Aries.WPF.Views.Cliente;
+using Aries.WPF.Views.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +16,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Aries.WPF
+namespace Aries.WPF.Views.Home
 {
-    public partial class MainWindow : Window
+    public partial class ucHome : Window
     {
-        public MainWindow()
-            => InitializeComponent();
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-            => GerenciadorTelas.CadastrarCliente();
+        public ucHome()
+        {
+            InitializeComponent();
+            DataContext = new HomeViewModel();
+        }
     }
 }

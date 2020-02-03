@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Aries.WPF.Models.Cliente;
+using System.Windows;
 
 namespace Aries.WPF.Views.Cliente
 {
@@ -8,6 +9,12 @@ namespace Aries.WPF.Views.Cliente
         {
             InitializeComponent();
             DataContext = new ClienteViewModel();
+        }
+
+        public ucCadastrarCliente(ClienteModel cliente)
+        {
+            InitializeComponent();
+            DataContext = new ClienteViewModel(cliente);
         }
     }
 }

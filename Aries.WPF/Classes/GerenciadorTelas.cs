@@ -1,4 +1,5 @@
 ﻿using Aries.WPF.Views.Cliente;
+using Aries.WPF.Views.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,14 @@ namespace Aries.WPF.Classes
 {
     internal static class GerenciadorTelas
     {
-        private static MainWindow _mainWindow = new MainWindow();
-        private static ucCadastrarCliente _cadastrarCliente = new ucCadastrarCliente();
+        #region Home
+        public static void MainWindow() => new ucHome().Show();
+        #endregion Home
 
-        public static void MainWindow() => _mainWindow.ShowDialog();
-        public static void CadastrarCliente() => _cadastrarCliente.ShowDialog();
+        #region Cliente
+        public static void ListarCliente() => new ucListarCliente().ShowDialog();
+        public static void CadastrarCliente() => new ucCadastrarCliente().ShowDialog();
+        public static void EditarCliente() => new ucCadastrarCliente()
+        #endregion Cliente
     }
 }

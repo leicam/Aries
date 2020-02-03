@@ -19,5 +19,8 @@ namespace Aries.Connector.Cliente
 
         public void AddOrUpdate(ClienteDTO cliente)
             => _clienteServico.AddOrUpdate(cliente);
+
+        public List<ClienteDTO> GetAll()
+            => _clienteServico.GetAll();
     }
 }

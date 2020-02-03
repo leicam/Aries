@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 
 namespace Aries.Connector
 {
-    public static class Connectors
+    public class Connectors
     {
-        private static Container _container = ConnectorInstaller.ContainerResolver();
+        private static Container _container;
 
-        public static ClienteConnector Cliente => new ClienteConnector(_container.GetInstance<IClienteServico>());
+        public Connectors()
+        {
+            _container = ConnectorInstaller.ContainerResolver();
+        }
+
+        public ClienteConnector Cliente => new ClienteConnector(_container.GetInstance<IClienteServico>());
     }
 }

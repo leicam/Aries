@@ -84,11 +84,24 @@
     <Compile Include="Models\Cliente\ClienteModel.cs" />
     <Compile Include="Views\AbstractViewModel.cs" />
     <Compile Include="Views\Cliente\ClienteViewModel.cs" />
+    <Compile Include="Views\Cliente\Commands\AbstractCadastroCliente.cs" />
     <Compile Include="Views\Cliente\Commands\CadastrarClienteCommand.cs" />
+    <Compile Include="Views\Cliente\Commands\EfetivarCadastroClienteCommand.cs" />
+    <Compile Include="Views\Cliente\Commands\ListarClientesCommand.cs" />
+    <Compile Include="Views\Cliente\ListarClienteViewModel.cs" />
+    <Compile Include="Views\Cliente\ucListarCliente.xaml.cs">
+      <DependentUpon>ucListarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Commands\ListarClienteCommand.cs" />
     <Compile Include="Views\Cliente\ucCadastrarCliente.xaml.cs">
       <DependentUpon>ucCadastrarCliente.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\Home\HomeViewModel.cs" />
+    <Page Include="Views\Cliente\ucListarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home\ucHome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -99,8 +112,8 @@
     <Compile Include="Classes\AbstractCommand.cs" />
     <Compile Include="Classes\AbstractNotifyPropertyChanged.cs" />
     <Compile Include="Classes\BaseInteractions.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\Home\ucHome.xaml.cs">
+      <DependentUpon>ucHome.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Cliente\ucCadastrarCliente.xaml">
@@ -145,7 +158,12 @@
       <Project>{ae71cd71-e741-484d-b0fa-9b422a9105b5}</Project>
       <Name>Aries.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Aries.Infraestrutura.Utilidades\Aries.Infraestrutura.Utilidades.csproj">
+      <Project>{02b625f5-6a23-47dd-9f99-df1697809762}</Project>
+      <Name>Aries.Infraestrutura.Utilidades</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

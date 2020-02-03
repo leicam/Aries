@@ -12,6 +12,9 @@ namespace Aries.Dominio.Entidades.Cliente
         public string Valor { get; private set; }
         public Cliente Cliente { get; private set; }
         public Guid IdCliente { get; private set; }
+
+        public Documento() { }
+
         public Documento(Cliente cliente, string documento)
         {
             Id = Guid.NewGuid();
