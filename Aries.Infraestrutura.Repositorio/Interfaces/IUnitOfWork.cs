@@ -10,5 +10,6 @@ namespace Aries.Infraestrutura.Repositorio.Interfaces
     public interface IUnitOfWork
     {
         IClienteRepositorio ClienteRepositorio { get; }
+        IProdutoRepositorio ProdutoRepositorio { get; }
     }
 }

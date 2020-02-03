@@ -24,6 +24,7 @@ namespace Aries.Infraestrutura.Repositorio.Contexto
             modelBuilder.Configurations.Add(new ClienteMap());
             modelBuilder.Configurations.Add(new DocumentoMap());
             modelBuilder.Configurations.Add(new EmailMap());
+            modelBuilder.Configurations.Add(new ProdutoMap());
 
             base.OnModelCreating(modelBuilder);
         }

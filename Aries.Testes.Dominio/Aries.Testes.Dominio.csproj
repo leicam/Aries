@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ClienteTeste\DocumentoTeste.cs" />
     <Compile Include="ClienteTeste\EmailTeste.cs" />
+    <Compile Include="ProdutoTeste\ProdutoTeste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

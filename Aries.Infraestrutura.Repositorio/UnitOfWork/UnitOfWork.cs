@@ -1,10 +1,4 @@
-﻿using Aries.Dominio.Entidades.Cliente;
-using Aries.Infraestrutura.Repositorio.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Aries.Infraestrutura.Repositorio.Interfaces;
 
 namespace Aries.Infraestrutura.Repositorio.UnitOfWork
 {
@@ -12,12 +6,15 @@ namespace Aries.Infraestrutura.Repositorio.UnitOfWork
     {
         #region Propriedades
         public IClienteRepositorio ClienteRepositorio { get; }
+        public IProdutoRepositorio ProdutoRepositorio { get; }
         #endregion Propriedades
 
         #region Construtores
-        public UnitOfWork(IClienteRepositorio clienteRepositorio)
+        public UnitOfWork(IClienteRepositorio clienteRepositorio,
+                          IProdutoRepositorio produtoRepositorio)
         {
             ClienteRepositorio = clienteRepositorio;
+            ProdutoRepositorio = produtoRepositorio;
         }
         #endregion
     }

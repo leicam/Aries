@@ -1,7 +1,6 @@
 ﻿namespace Aries.Infraestrutura.Repositorio.Migrations
 {
     using Aries.Infraestrutura.Repositorio.Contexto;
-    using MySql.Data.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -12,9 +11,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            SetSqlGenerator("MySql.Data.MySqlClient", new MySqlMigrationSqlGenerator());
-            SetHistoryContextFactory("MySql.Data.MySqlClient", (conn, schema) => new MySqlHistoryContext(conn, schema));
-            CodeGenerator = new MySqlMigrationCodeGenerator();
         }
 
         protected override void Seed(DataContext context)

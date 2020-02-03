@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builders\ClienteBuilder.cs" />
+    <Compile Include="Builders\ProdutoBuilder.cs" />
     <Compile Include="Entidades\Cliente\Cliente.cs" />
     <Compile Include="Entidades\Cliente\Documento.cs" />
     <Compile Include="Entidades\Cliente\Email.cs" />
+    <Compile Include="Entidades\Produto\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
