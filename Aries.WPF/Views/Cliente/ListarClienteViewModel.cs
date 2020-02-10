@@ -1,12 +1,6 @@
-﻿using Aries.Infraestrutura.Utilidades.Extensions;
-using Aries.WPF.Models.Cliente;
+﻿using Aries.WPF.Models.Cliente;
 using Aries.WPF.Views.Cliente.Commands;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.WPF.Views.Cliente
 {

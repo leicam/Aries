@@ -47,6 +47,7 @@
     <Compile Include="Cliente\ClienteConnector.cs" />
     <Compile Include="Connectors.cs" />
     <Compile Include="ConnectorInstaller.cs" />
+    <Compile Include="Produto\ProdutoConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

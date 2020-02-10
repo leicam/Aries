@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IClienteServico.cs" />
+    <Compile Include="Interfaces\IProdutoServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\ClienteServico.cs" />
+    <Compile Include="Servicos\ProdutoServico.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aries.Dominio\Aries.Dominio.csproj">

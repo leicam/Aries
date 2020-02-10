@@ -1,11 +1,7 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.Connector.Cliente;
+using Aries.Connector.Produto;
 using SimpleInjector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Connector
 {
@@ -19,5 +15,6 @@ namespace Aries.Connector
         }
 
         public ClienteConnector Cliente => new ClienteConnector(_container.GetInstance<IClienteServico>());
+        public ProdutoConnector Produto => new ProdutoConnector(_container.GetInstance<IProdutoServico>());
     }
 }

@@ -28,5 +28,7 @@ namespace Aries.Dominio.Builders
             _produto.Valor = valor;
             return this;
         }
+
+        public Produto Build() => _produto;
     }
 }
