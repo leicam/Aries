@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Aries.WPF.Views.Cliente"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ucCadastrarCliente" Height="300" Width="200">
+        Title="Cadastrar Cliente" Height="300" Width="200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>

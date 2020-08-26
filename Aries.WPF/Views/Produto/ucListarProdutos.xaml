@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:local="clr-namespace:Aries.WPF.Views.Produto"
+        xmlns:classes="clr-namespace:Aries.WPF.Classes"
         mc:Ignorable="d"
-        Title="ucListarProdutos" Height="720" Width="1280">
+        Title="Listar Produtos" Height="500" Width="1000">
     
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -16,11 +17,32 @@
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="*" Focusable="False"/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dtgClientes" Grid.Row="0" AutoGenerateColumns="False" GridLinesVisibility="None"
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="txtEAN"
+                     Text="{Binding EAN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     classes:FocusExtension.IsFocused="{Binding IsEanFocused}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="LostFocus">
+                        <i:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ListarProdutoPorEan}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Return" CommandParameter="{Binding}" Command="{Binding ListarProdutoPorEan}"/>
+                    <KeyBinding Key="Tab" CommandParameter="{Binding}" Command="{Binding ListarProdutoPorEan}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+        </Grid>
+        
+        <DataGrid x:Name="dtgClientes" Grid.Row="1" AutoGenerateColumns="False" GridLinesVisibility="None"
                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                   VerticalScrollBarVisibility="Auto" Height="Auto"
                   ItemsSource="{Binding Produtos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
@@ -29,12 +51,13 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="EAN" Binding="{Binding EAN}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" Width="3*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Parteleira" Binding="{Binding Parteleira}" Width="3*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <!--#endregion-->
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="5"/>

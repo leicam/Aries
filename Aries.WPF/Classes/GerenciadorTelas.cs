@@ -1,12 +1,8 @@
 ﻿using Aries.WPF.Models.Cliente;
+using Aries.WPF.Models.Produto;
 using Aries.WPF.Views.Cliente;
 using Aries.WPF.Views.Home;
 using Aries.WPF.Views.Produto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.WPF.Classes
 {
@@ -24,7 +20,8 @@ namespace Aries.WPF.Classes
 
         #region Produto
         public static void ListarProduto() => new ucListarProdutos().ShowDialog();
-        public static void CadastrarProduto() => throw new NotImplementedException();
-        #endregion
+        public static void CadastrarProduto() => new ucCadastrarProduto().ShowDialog();
+        public static void EditarProduto(ProdutoModel produto) => new ucCadastrarProduto(produto).ShowDialog();
+        #endregion Produto
     }
 }

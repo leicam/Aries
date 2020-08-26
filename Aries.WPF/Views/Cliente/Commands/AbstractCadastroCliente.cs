@@ -2,10 +2,6 @@
 using Aries.WPF.Classes;
 using Aries.WPF.Models.Cliente;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Aries.WPF.Views.Cliente.Commands

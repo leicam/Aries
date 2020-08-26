@@ -6,8 +6,12 @@ namespace Aries.WPF.Views.Cliente
 {
     public class ListarClienteViewModel : AbstractViewModel
     {
+        #region Variaveis privadas
         private ObservableCollection<ClienteModel> _clientes = new ObservableCollection<ClienteModel>();
         private ClienteModel _clienteSelecionado = new ClienteModel();
+        #endregion Variaveis privadas
+
+        #region Propriedades
 
         public ObservableCollection<ClienteModel> Clientes
         {
@@ -20,6 +24,8 @@ namespace Aries.WPF.Views.Cliente
             get => _clienteSelecionado;
             set => SetField(ref _clienteSelecionado, value);
         }
+        
+        #endregion Propriedades
 
         public ListarClientesCommand ListarClientes { get; private set; } = new ListarClientesCommand();
         public CadastrarClienteCommand CadastrarCliente { get; private set; } = new CadastrarClienteCommand();

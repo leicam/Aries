@@ -29,6 +29,12 @@ namespace Aries.Dominio.Builders
             return this;
         }
 
+        public ProdutoBuilder ComParteleira(string parteleira)
+        {
+            _produto.Parteleira = parteleira;
+            return this;
+        }
+
         public Produto Build() => _produto;
     }
 }

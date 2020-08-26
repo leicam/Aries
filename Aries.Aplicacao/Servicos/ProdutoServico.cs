@@ -1,5 +1,6 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.Dominio.Builders;
+using Aries.Dominio.Entidades.Produto;
 using Aries.DTO.Produto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
 using System.Collections.Generic;
@@ -16,13 +17,28 @@ namespace Aries.Aplicacao.Servicos
             _produtoRepositorio = produtoRepositorio;
         }
 
-        public void AddOrUpdate(ProdutoDTO produtoDTO)
+        public void AddOrUpdate(ProdutoDTO produtoDTO) 
+            => _produtoRepositorio.AdicionarOuAlterar(MontarDados(produtoDTO));
+
+        private Produto MontarDados(ProdutoDTO produtoDTO)
         {
-            _produtoRepositorio.AdicionarOuAlterar(new ProdutoBuilder()
+            var produto = _produtoRepositorio.GetByEAN(produtoDTO.EAN);
+
+            if (produto != null)
+            {
+                produto.Descricao = produtoDTO.Descricao;
+                produto.Valor = produtoDTO.Valor;
+                produto.Parteleira = produtoDTO.Parteleira;
+
+                return produto;
+            }
+
+            return new ProdutoBuilder()
                 .ComDescricao(produtoDTO.Descricao)
                 .ComEAN(produtoDTO.EAN)
                 .ComValor(produtoDTO.Valor)
-                .Build());
+                .ComParteleira(produtoDTO.Parteleira)
+                .Build();
         }
 
         public IEnumerable<ProdutoDTO> GetAll()
@@ -32,19 +48,12 @@ namespace Aries.Aplicacao.Servicos
 
             produtos
                 .ToList()
-                .ForEach(x => { lista.Add(new ProdutoDTO(x.EAN, x.Descricao, x.Valor)); });
+                .ForEach(x => { lista.Add(new ProdutoDTO(x.EAN, x.Descricao, x.Valor, x.Parteleira)); });
 
             return lista.AsEnumerable();
         }
 
-        public void Remove(ProdutoDTO produtoDTO)
-        {
-            var produto = _produtoRepositorio
-                .CarregarTodos()
-                .ToList()
-                .FirstOrDefault(x => x.EAN.Equals(produtoDTO.EAN));
-
-            _produtoRepositorio.Remover(produto);
-        }
+        public void Remove(ProdutoDTO produtoDTO) 
+            => _produtoRepositorio.Remover(_produtoRepositorio.GetByEAN(produtoDTO.EAN));
     }
 }

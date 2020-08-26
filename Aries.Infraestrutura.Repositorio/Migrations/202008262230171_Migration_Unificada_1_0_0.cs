@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Migration_Unificada_1000 : DbMigration
+    public partial class Migration_Unificada_1_0_0 : DbMigration
     {
         public override void Up()
         {
@@ -41,6 +41,18 @@
                 .ForeignKey("dbo.CLIENTE", t => t.ID_CLIENTE, cascadeDelete: true)
                 .Index(t => t.ID_CLIENTE);
             
+            CreateTable(
+                "dbo.PRODUTO",
+                c => new
+                    {
+                        ID_PRODUTO = c.Guid(nullable: false),
+                        CD_EAN = c.Int(nullable: false),
+                        DS_PRODUTO = c.String(nullable: false, unicode: false),
+                        VL_PRODUTO = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        DS_PARTELEIRA = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.ID_PRODUTO);
+            
         }
         
         public override void Down()
@@ -49,6 +61,7 @@
             DropForeignKey("dbo.CLIENTE_DOCUMENTO", "ID_CLIENTE", "dbo.CLIENTE");
             DropIndex("dbo.CLIENTE_EMAIL", new[] { "ID_CLIENTE" });
             DropIndex("dbo.CLIENTE_DOCUMENTO", new[] { "ID_CLIENTE" });
+            DropTable("dbo.PRODUTO");
             DropTable("dbo.CLIENTE_EMAIL");
             DropTable("dbo.CLIENTE_DOCUMENTO");
             DropTable("dbo.CLIENTE");

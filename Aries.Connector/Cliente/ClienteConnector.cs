@@ -1,10 +1,6 @@
 ﻿using Aries.Aplicacao.Interfaces;
 using Aries.DTO.Cliente;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Connector.Cliente
 {

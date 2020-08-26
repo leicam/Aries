@@ -13,8 +13,8 @@ namespace Aries.Connector.Produto
             _produtoServico = produtoServico;
         }
 
-        void AddOrUpdate(ProdutoDTO dto) => _produtoServico.AddOrUpdate(dto);
-        void Remove(ProdutoDTO dto) => _produtoServico.Remove(dto);
-        IEnumerable<ProdutoDTO> GetAll() => _produtoServico.GetAll();
+        public void AddOrUpdate(ProdutoDTO dto) => _produtoServico.AddOrUpdate(dto);
+        public void Remove(ProdutoDTO dto) => _produtoServico.Remove(dto);
+        public IEnumerable<ProdutoDTO> GetAll() => _produtoServico.GetAll();
     }
 }

@@ -1,10 +1,5 @@
 ﻿using Aries.Dominio.Entidades.Produto;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.Repositorio.Mapeamento
 {
@@ -20,6 +15,7 @@ namespace Aries.Infraestrutura.Repositorio.Mapeamento
             Property(x => x.Descricao).HasColumnName("DS_PRODUTO").IsRequired();
             Property(x => x.Valor).HasColumnName("VL_PRODUTO").IsRequired();
             Property(x => x.EAN).HasColumnName("CD_EAN").IsRequired();
+            Property(x => x.Parteleira).HasColumnName("DS_PARTELEIRA").IsOptional();
         }
     }
 }

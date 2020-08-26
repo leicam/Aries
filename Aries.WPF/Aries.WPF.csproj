@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\FocusExtension.cs" />
     <Compile Include="Classes\GerenciadorTelas.cs" />
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Models\Cliente\ClienteModel.cs" />
@@ -94,13 +95,24 @@
     <Compile Include="Views\Cliente\ucListarCliente.xaml.cs">
       <DependentUpon>ucListarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Commands\CadastrarProdutoCommand.cs" />
     <Compile Include="Views\Home\Commands\ListarClienteCommand.cs" />
     <Compile Include="Views\Cliente\ucCadastrarCliente.xaml.cs">
       <DependentUpon>ucCadastrarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Commands\ListarProdutoCommand.cs" />
     <Compile Include="Views\Home\HomeViewModel.cs" />
+    <Compile Include="Views\Produto\Commands\AbstractCadastrarProduto.cs" />
+    <Compile Include="Views\Produto\Commands\AdicionarOuAtualizarProdutoCommand.cs" />
+    <Compile Include="Views\Produto\Commands\EditarProdutoCommand.cs" />
+    <Compile Include="Views\Produto\Commands\CadastrarProdutoCommand.cs" />
+    <Compile Include="Views\Produto\Commands\ListarProdutoPorEanCommand.cs" />
+    <Compile Include="Views\Produto\Commands\ListarProdutosCommand.cs" />
     <Compile Include="Views\Produto\ListarProdutoViewModel.cs" />
+    <Compile Include="Views\Produto\ProdutoViewModel.cs" />
+    <Compile Include="Views\Produto\ucCadastrarProduto.xaml.cs">
+      <DependentUpon>ucCadastrarProduto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Produto\ucListarProdutos.xaml.cs">
       <DependentUpon>ucListarProdutos.xaml</DependentUpon>
     </Compile>
@@ -124,6 +136,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Cliente\ucCadastrarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Produto\ucCadastrarProduto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,9 +190,7 @@
       <Name>Aries.Infraestrutura.Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Produto\Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

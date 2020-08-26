@@ -79,13 +79,9 @@
     <Compile Include="Mapeamento\DocumentoMap.cs" />
     <Compile Include="Mapeamento\EmailMap.cs" />
     <Compile Include="Mapeamento\ProdutoMap.cs" />
-    <Compile Include="Migrations\202002031937278_Migration_Unificada_1.0.0.0.cs" />
-    <Compile Include="Migrations\202002031937278_Migration_Unificada_1.0.0.0.designer.cs">
-      <DependentUpon>202002031937278_Migration_Unificada_1.0.0.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002032119075_Migration_Unificada_1.1.0.0.cs" />
-    <Compile Include="Migrations\202002032119075_Migration_Unificada_1.1.0.0.designer.cs">
-      <DependentUpon>202002032119075_Migration_Unificada_1.1.0.0.cs</DependentUpon>
+    <Compile Include="Migrations\202008262230171_Migration_Unificada_1_0_0.cs" />
+    <Compile Include="Migrations\202008262230171_Migration_Unificada_1_0_0.designer.cs">
+      <DependentUpon>202008262230171_Migration_Unificada_1_0_0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,11 +101,8 @@
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002031937278_Migration_Unificada_1.0.0.0.resx">
-      <DependentUpon>202002031937278_Migration_Unificada_1.0.0.0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002032119075_Migration_Unificada_1.1.0.0.resx">
-      <DependentUpon>202002032119075_Migration_Unificada_1.1.0.0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008262230171_Migration_Unificada_1_0_0.resx">
+      <DependentUpon>202008262230171_Migration_Unificada_1_0_0.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

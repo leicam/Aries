@@ -7,13 +7,13 @@ namespace Aries.Infraestrutura.Repositorio.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Migration_Unificada_1100 : IMigrationMetadata
+    public sealed partial class Migration_Unificada_1_0_0 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration_Unificada_1100));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration_Unificada_1_0_0));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002032119075_Migration_Unificada_1.1.0.0"; }
+            get { return "202008262230171_Migration_Unificada_1_0_0"; }
         }
         
         string IMigrationMetadata.Source

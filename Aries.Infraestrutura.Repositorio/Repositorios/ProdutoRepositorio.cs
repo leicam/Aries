@@ -1,11 +1,8 @@
 ﻿using Aries.Dominio.Entidades.Produto;
 using Aries.Infraestrutura.Repositorio.Contexto;
 using Aries.Infraestrutura.Repositorio.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Infraestrutura.Repositorio.Repositorios
 {
@@ -21,6 +18,9 @@ namespace Aries.Infraestrutura.Repositorio.Repositorios
 
         public IEnumerable<Produto> CarregarTodos()
             => GetAll();
+
+        public Produto GetByEAN(int ean)
+            => Set.FirstOrDefault(x => x.EAN == ean);
 
         public void Remover(Produto produto)
         {

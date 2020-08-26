@@ -1,10 +1,6 @@
 ﻿using Aries.Dominio.Entidades.Produto;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Testes.Dominio.ProdutoTeste
 {
@@ -20,6 +16,7 @@ namespace Aries.Testes.Dominio.ProdutoTeste
                 produto.Descricao = "TESTE";
                 produto.EAN = 123456789;
                 produto.Valor = 19.90m;
+                produto.Parteleira = "TESTE PARTELEIRA 123";
 
                 if (string.IsNullOrEmpty(produto.Id.ToString()))
                     throw new ArgumentException("Produto inválido!");

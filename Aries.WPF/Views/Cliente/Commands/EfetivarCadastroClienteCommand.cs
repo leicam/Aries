@@ -1,9 +1,4 @@
-﻿using Aries.Connector;
-using Aries.DTO.Cliente;
-using Aries.WPF.Classes;
-using Aries.WPF.Models.Cliente;
-using System;
-using System.Windows;
+﻿using Aries.DTO.Cliente;
 
 namespace Aries.WPF.Views.Cliente.Commands
 {
