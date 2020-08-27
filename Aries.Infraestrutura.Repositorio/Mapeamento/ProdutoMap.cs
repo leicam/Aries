@@ -15,7 +15,7 @@ namespace Aries.Infraestrutura.Repositorio.Mapeamento
             Property(x => x.Descricao).HasColumnName("DS_PRODUTO").IsRequired();
             Property(x => x.Valor).HasColumnName("VL_PRODUTO").IsRequired();
             Property(x => x.EAN).HasColumnName("CD_EAN").IsRequired();
-            Property(x => x.Parteleira).HasColumnName("DS_PARTELEIRA").IsOptional();
+            Property(x => x.Prateleira).HasColumnName("DS_PRATELEIRA").IsOptional();
         }
     }
 }

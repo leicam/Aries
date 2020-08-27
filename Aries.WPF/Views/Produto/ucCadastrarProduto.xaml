@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Cadastrar Produto" Height="300" Width="300">
+
+    <!--#region Atalhos da tela -->
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="C" CommandParameter="{Binding}" Command="{Binding AdicionarOuAtualizarProduto}"/>
+    </Window.InputBindings>
+    <!--#endregion Atalhos da tela-->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -22,10 +29,12 @@
                  Text="{Binding Produto.Descricao, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <TextBox x:Name="txtParteleira" Grid.Row="1"
-                 materialDesign:HintAssist.Hint="Parteleira" CharacterCasing="Upper"
-                 Text="{Binding Produto.Parteleira, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                 materialDesign:HintAssist.Hint="Prateleira" CharacterCasing="Upper"
+                 Text="{Binding Produto.Prateleira, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
-        <TextBox x:Name="txtEAN" Grid.Row="2" ToolTip="Código de Barras" IsEnabled="{Binding IsEanEnable}"
+        <TextBox x:Name="txtEAN" Grid.Row="2"  CharacterCasing="Upper"
+                 materialDesign:HintAssist.Hint="Código de Barras" 
+                 IsEnabled="{Binding IsEanEnable}"
                  Text="{Binding Produto.EAN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <TextBox x:Name="txtValor" Grid.Row="3" ToolTip="Valor R$"
@@ -33,7 +42,7 @@
 
         <Button Grid.Row="5"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Width="150" Content="Confirmar"
+                Width="150" Content="Confirmar" ToolTip="Ctrl + c"
                 CommandParameter="{Binding}"
                 Command="{Binding AdicionarOuAtualizarProduto}"/>
     </Grid>

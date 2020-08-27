@@ -2,19 +2,19 @@
 {
     public class ProdutoDTO
     {
-        public int EAN { get; set; }
+        public string EAN { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
-        public string Parteleira { get; set; }
+        public string Prateleira { get; set; }
 
         public ProdutoDTO() { }
 
-        public ProdutoDTO(int ean, string descricao, decimal valor, string parteleira)
+        public ProdutoDTO(string ean, string descricao, decimal valor, string prateleira)
         {
             EAN = ean;
             Descricao = descricao;
             Valor = valor;
-            Parteleira = parteleira;
+            Prateleira = prateleira;
         }
     }
 }

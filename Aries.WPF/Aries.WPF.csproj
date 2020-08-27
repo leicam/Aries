@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\BindingProxy.cs" />
     <Compile Include="Classes\FocusExtension.cs" />
     <Compile Include="Classes\GerenciadorTelas.cs" />
     <Compile Include="Classes\Program.cs" />

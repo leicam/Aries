@@ -8,6 +8,6 @@ namespace Aries.Aplicacao.Interfaces
         void AddOrUpdate(ProdutoDTO produtoDTO);
         void Remove(ProdutoDTO produtoDTO);
         IEnumerable<ProdutoDTO> GetAll();
-        ProdutoDTO GetByEan(int ean);
+        ProdutoDTO GetByEan(string ean);
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Aries.DTO.Produto;
+using System;
+using System.Windows;
 
 namespace Aries.WPF.Views.Produto.Commands
 {
@@ -6,7 +8,7 @@ namespace Aries.WPF.Views.Produto.Commands
     {
         public override void Execute(object parameter)
         {
-            _vm = (parameter as ProdutoViewModel);
+            _vm = (parameter as ProdutoViewModel);       
             Commit();
         }
 
@@ -14,6 +16,6 @@ namespace Aries.WPF.Views.Produto.Commands
             => new ProdutoDTO(_vm.Produto.EAN,
                               _vm.Produto.Descricao,
                               _vm.Produto.Valor,
-                              _vm.Produto.Parteleira);
+                              _vm.Produto.Prateleira);
     }
 }

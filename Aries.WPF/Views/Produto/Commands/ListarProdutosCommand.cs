@@ -17,6 +17,8 @@ namespace Aries.WPF.Views.Produto.Commands
 
             vm.Produtos.Clear();
             vm.Produtos.AddRange(Mapper.Map<List<ProdutoDTO>, List<ProdutoModel>>(produtos.ToList()));
+            vm.ProdutoSelecionado = vm.Produtos.FirstOrDefault();
+            vm.EAN = string.Empty;
         }
     }
 }

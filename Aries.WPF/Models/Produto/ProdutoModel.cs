@@ -3,14 +3,14 @@
     public class ProdutoModel : AbstractModel
     {
         #region Variaveis privadas
-        private int _ean = 0;
+        private string _ean = string.Empty;
         private string _descricao = string.Empty;
         private decimal _valor = 0.0m;
-        private string _parteleira = string.Empty;
+        private string _prateleira = string.Empty;
         #endregion Variaveis privadas
 
         #region Propriedades
-        public int EAN 
+        public string EAN 
         { 
             get => _ean;
             set => SetField(ref _ean, value);
@@ -28,10 +28,10 @@
             set => SetField(ref _valor, value);
         }
 
-        public string Parteleira
+        public string Prateleira
         {
-            get => _parteleira;
-            set => SetField(ref _parteleira, value);
+            get => _prateleira;
+            set => SetField(ref _prateleira, value);
         }
 
         #endregion Propriedades

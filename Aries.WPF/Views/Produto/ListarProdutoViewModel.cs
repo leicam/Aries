@@ -7,7 +7,7 @@ namespace Aries.WPF.Views.Produto
     public class ListarProdutoViewModel : AbstractViewModel
     {
         #region Variaveis privadas
-        private int _ean = 0;
+        private string _ean = string.Empty;
         private bool _isEanFocused;
         private ObservableCollection<ProdutoModel> _produtos = new ObservableCollection<ProdutoModel>();
         private ProdutoModel _produtoSelecionado = new ProdutoModel();
@@ -15,7 +15,7 @@ namespace Aries.WPF.Views.Produto
 
         #region Propriedades
 
-        public int EAN
+        public string EAN
         {
             get => _ean;
             set => SetField(ref _ean, value);
@@ -41,9 +41,14 @@ namespace Aries.WPF.Views.Produto
 
         #endregion Propriedades
 
+        #region Comandos
+
         public ListarProdutosCommand ListarProdutos { get; private set; } = new ListarProdutosCommand();
         public ListarProdutoPorEanCommand ListarProdutoPorEan { get; private set; } = new ListarProdutoPorEanCommand();
         public CadastrarProdutoCommand CadastrarProduto { get; private set; } = new CadastrarProdutoCommand();
         public EditarProdutoCommand EditarProduto { get; private set; } = new EditarProdutoCommand();
+
+        #endregion Comandos
+
     }
 }

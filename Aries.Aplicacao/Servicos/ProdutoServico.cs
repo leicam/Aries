@@ -29,7 +29,7 @@ namespace Aries.Aplicacao.Servicos
 
             produtos
                 .ToList()
-                .ForEach(x => { lista.Add(new ProdutoDTO(x.EAN, x.Descricao, x.Valor, x.Parteleira)); });
+                .ForEach(x => { lista.Add(new ProdutoDTO(x.EAN, x.Descricao, x.Valor, x.Prateleira)); });
 
             return lista.AsEnumerable();
         }
@@ -37,7 +37,7 @@ namespace Aries.Aplicacao.Servicos
         public void Remove(ProdutoDTO produtoDTO) 
             => _produtoRepositorio.Remover(_produtoRepositorio.GetByEAN(produtoDTO.EAN));
 
-        public ProdutoDTO GetByEan(int ean)
+        public ProdutoDTO GetByEan(string ean)
         {
             var produto = _produtoRepositorio.GetByEAN(ean);
 
@@ -55,7 +55,7 @@ namespace Aries.Aplicacao.Servicos
             {
                 produto.Descricao = produtoDTO.Descricao;
                 produto.Valor = produtoDTO.Valor;
-                produto.Parteleira = produtoDTO.Parteleira;
+                produto.Prateleira = produtoDTO.Prateleira;
 
                 return produto;
             }
@@ -64,7 +64,7 @@ namespace Aries.Aplicacao.Servicos
                 .ComDescricao(produtoDTO.Descricao)
                 .ComEAN(produtoDTO.EAN)
                 .ComValor(produtoDTO.Valor)
-                .ComParteleira(produtoDTO.Parteleira)
+                .ComParteleira(produtoDTO.Prateleira)
                 .Build();
         }
     }

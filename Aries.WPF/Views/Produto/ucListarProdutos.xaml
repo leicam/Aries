@@ -15,6 +15,14 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
+    <!--#region Atalhos da tela -->
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="B" CommandParameter="{Binding}" Command="{Binding ListarProdutos}"/>
+        <KeyBinding Modifiers="Ctrl" Key="C" CommandParameter="{Binding}" Command="{Binding CadastrarProduto}"/>
+        <KeyBinding Modifiers="Ctrl" Key="E" CommandParameter="{Binding}" Command="{Binding EditarProduto}"/>
+    </Window.InputBindings>
+    <!--#endregion Atalhos da tela-->
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -22,6 +30,9 @@
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
+        <FrameworkElement x:Name="ElementoPonte" Visibility="Collapsed"/>
+
+        <!--#region Busca -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -41,22 +52,44 @@
                 </TextBox.InputBindings>
             </TextBox>
         </Grid>
-        
+        <!--#endregion Busca -->
+
+        <!--#region DataGrid Produtos -->
         <DataGrid x:Name="dtgClientes" Grid.Row="1" AutoGenerateColumns="False" GridLinesVisibility="None"
                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                  VerticalScrollBarVisibility="Auto" Height="Auto"
+                  VerticalScrollBarVisibility="Auto" Height="Auto" ToolTip="Ctrl + e Editar Produto"
                   ItemsSource="{Binding Produtos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
                   SelectedItem="{Binding ProdutoSelecionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
 
+            <DataGrid.Resources>
+                <classes:BindingProxy x:Key="proxy" Data="{Binding DataContext, Source={x:Reference ElementoPonte}}"/>
+            </DataGrid.Resources>
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="EAN" Binding="{Binding EAN}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" Width="3*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Parteleira" Binding="{Binding Parteleira}" Width="3*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Prateleira" Binding="{Binding Prateleira}" Width="3*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
-        </DataGrid>
-        <!--#endregion-->
 
+            <!--#region Input Bindings-->
+            <DataGrid.InputBindings>
+                <!--#region Mouse Double Click-->
+                <MouseBinding 
+                                Gesture="LeftDoubleClick" 
+                                CommandParameter="{Binding Data, Source={StaticResource proxy}}"
+                                Command="{Binding EditarProduto}"/>
+                <!--#endregion-->
+
+                <!--#region Atalhos-->
+                <KeyBinding Modifiers="Ctrl" Key="E" CommandParameter="{Binding Data, Source={StaticResource proxy}}" Command="{Binding EditarProduto}"/>
+                <!--#endregion-->
+            </DataGrid.InputBindings>
+            <!--#endregion-->
+        </DataGrid>
+        <!--#endregion DataGrid Produtos -->
+
+        <!--#region Botões -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
@@ -69,21 +102,22 @@
 
             <Button Grid.Column="0"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Width="150" Content="Cadastrar"
+                Width="150" Content="Cadastrar" ToolTip="Ctrl + c"
                 CommandParameter="{Binding}"
                 Command="{Binding CadastrarProduto}"/>
 
             <Button Grid.Column="2"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Width="150" Content="Editar"
+                Width="150" Content="Editar" ToolTip="Ctrl + e"
                 CommandParameter="{Binding}"
                 Command="{Binding EditarProduto}"/>
 
             <Button Grid.Column="4"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Width="150" Content="Listar Todos"
+                Width="150" Content="Buscar Todos" ToolTip="Ctrl + b"
                 CommandParameter="{Binding}"
                 Command="{Binding ListarProdutos}"/>
         </Grid>
+        <!--#endregion Botões -->
     </Grid>
 </Window>

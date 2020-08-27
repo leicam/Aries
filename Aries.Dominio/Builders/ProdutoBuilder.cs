@@ -1,9 +1,4 @@
 ﻿using Aries.Dominio.Entidades.Produto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.Dominio.Builders
 {
@@ -11,7 +6,7 @@ namespace Aries.Dominio.Builders
     {
         private readonly Produto _produto = new Produto();
         
-        public ProdutoBuilder ComEAN(int ean)
+        public ProdutoBuilder ComEAN(string ean)
         {
             _produto.EAN = ean;
             return this;
@@ -31,7 +26,7 @@ namespace Aries.Dominio.Builders
 
         public ProdutoBuilder ComParteleira(string parteleira)
         {
-            _produto.Parteleira = parteleira;
+            _produto.Prateleira = parteleira;
             return this;
         }
 

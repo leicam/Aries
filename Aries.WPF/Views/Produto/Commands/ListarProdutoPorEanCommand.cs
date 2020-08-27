@@ -10,13 +10,15 @@ namespace Aries.WPF.Views.Produto.Commands
     public class ListarProdutoPorEanCommand : AbstractCommand
     {
         public override bool CanExecute(object parameter)
-            => (parameter as ListarProdutoViewModel).EAN > 0;
+            => !string.IsNullOrWhiteSpace((parameter as ListarProdutoViewModel).EAN)
+            && !(parameter as ListarProdutoViewModel).EAN.Equals("0");
 
         public override void Execute(object parameter)
         {
+            var vm = parameter as ListarProdutoViewModel;
+
             try
             {
-                var vm = parameter as ListarProdutoViewModel;
                 var produto = vm.Connector.Produto.GetByEan(vm.EAN);
 
                 vm.Produtos.Clear();
@@ -26,6 +28,10 @@ namespace Aries.WPF.Views.Produto.Commands
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                vm.EAN = string.Empty;
             }
         }
     }

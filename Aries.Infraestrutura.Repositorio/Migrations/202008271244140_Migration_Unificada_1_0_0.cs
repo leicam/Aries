@@ -46,10 +46,10 @@
                 c => new
                     {
                         ID_PRODUTO = c.Guid(nullable: false),
-                        CD_EAN = c.Int(nullable: false),
+                        CD_EAN = c.String(nullable: false, unicode: false),
                         DS_PRODUTO = c.String(nullable: false, unicode: false),
                         VL_PRODUTO = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        DS_PARTELEIRA = c.String(unicode: false),
+                        DS_PRATELEIRA = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.ID_PRODUTO);
             

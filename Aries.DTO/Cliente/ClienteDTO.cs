@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aries.DTO.Cliente
 {
@@ -13,6 +9,8 @@ namespace Aries.DTO.Cliente
         public string Sobrenome { get; set; }
         public string Documento { get; set; }
         public string Email { get; set; }
+
+        public ClienteDTO() { }
 
         public ClienteDTO(string nome, string sobrenome, string documento, string email)
         {

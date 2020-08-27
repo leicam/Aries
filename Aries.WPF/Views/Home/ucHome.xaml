@@ -5,7 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aries.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="100" Width="350">
+        Title="Nerv - Backoffice" Height="100" Width="350">
+
+    <!--#region Atalhos da tela -->
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="C" CommandParameter="{Binding}" Command="{Binding CadastrarProduto}"/>
+        <KeyBinding Modifiers="Ctrl" Key="L" CommandParameter="{Binding}" Command="{Binding ListarProduto}"/>
+    </Window.InputBindings>
+    <!--#endregion Atalhos da tela-->
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -22,14 +30,14 @@
 
             <Button Grid.Column="0"
                     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                    CommandParameter="{Binding}"
+                    CommandParameter="{Binding}" ToolTip="Ctrl + c"
                     Command="{Binding CadastrarProduto}"
                     Width="150"
                     Content="Cadastrar Produto"/>
             
             <Button Grid.Column="2"
                     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                    CommandParameter="{Binding}"
+                    CommandParameter="{Binding}" ToolTip="Ctrl + l"
                     Command="{Binding ListarProduto}"
                     Width="150"
                     Content="Listar Produto"/>

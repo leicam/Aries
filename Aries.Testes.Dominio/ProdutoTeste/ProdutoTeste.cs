@@ -14,9 +14,9 @@ namespace Aries.Testes.Dominio.ProdutoTeste
             {
                 var produto = new Produto();
                 produto.Descricao = "TESTE";
-                produto.EAN = 123456789;
+                produto.EAN = "123456789";
                 produto.Valor = 19.90m;
-                produto.Parteleira = "TESTE PARTELEIRA 123";
+                produto.Prateleira = "TESTE PARTELEIRA 123";
 
                 if (string.IsNullOrEmpty(produto.Id.ToString()))
                     throw new ArgumentException("Produto inválido!");

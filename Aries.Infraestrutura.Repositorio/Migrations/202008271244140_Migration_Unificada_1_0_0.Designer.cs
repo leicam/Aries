@@ -13,7 +13,7 @@ namespace Aries.Infraestrutura.Repositorio.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202008262230171_Migration_Unificada_1_0_0"; }
+            get { return "202008271244140_Migration_Unificada_1_0_0"; }
         }
         
         string IMigrationMetadata.Source
