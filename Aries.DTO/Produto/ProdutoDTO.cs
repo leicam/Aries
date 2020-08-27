@@ -7,6 +7,8 @@
         public decimal Valor { get; set; }
         public string Parteleira { get; set; }
 
+        public ProdutoDTO() { }
+
         public ProdutoDTO(int ean, string descricao, decimal valor, string parteleira)
         {
             EAN = ean;

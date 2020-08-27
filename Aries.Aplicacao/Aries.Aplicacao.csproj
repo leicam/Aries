@@ -61,6 +61,10 @@
       <Project>{2de80080-a4af-477b-b4df-7156ebf01f79}</Project>
       <Name>Aries.Infraestrutura.Repositorio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Aries.Infraestrutura.Utilidades\Aries.Infraestrutura.Utilidades.csproj">
+      <Project>{02B625F5-6A23-47DD-9F99-DF1697809762}</Project>
+      <Name>Aries.Infraestrutura.Utilidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

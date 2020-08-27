@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="txtEAN"
+            <TextBox x:Name="txtEAN" ToolTip="Informe um código de barras para consulta"
                      Text="{Binding EAN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                      classes:FocusExtension.IsFocused="{Binding IsEanFocused}">
                 <i:Interaction.Triggers>
@@ -60,7 +60,9 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -76,6 +78,12 @@
                 Width="150" Content="Editar"
                 CommandParameter="{Binding}"
                 Command="{Binding EditarProduto}"/>
+
+            <Button Grid.Column="4"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                Width="150" Content="Listar Todos"
+                CommandParameter="{Binding}"
+                Command="{Binding ListarProdutos}"/>
         </Grid>
     </Grid>
 </Window>

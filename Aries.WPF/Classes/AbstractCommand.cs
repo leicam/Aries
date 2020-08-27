@@ -12,7 +12,7 @@ namespace Aries.WPF.Classes
         private Window CurrentWindow => Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
 
         public void CloseWindow() => CurrentWindow?.Close();
-        public bool CanExecute(object parameter) => true;
+        public virtual bool CanExecute(object parameter) => true;
         public void RaizeCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         public abstract void Execute(object parameter);
 

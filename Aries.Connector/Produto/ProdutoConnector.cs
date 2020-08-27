@@ -16,5 +16,6 @@ namespace Aries.Connector.Produto
         public void AddOrUpdate(ProdutoDTO dto) => _produtoServico.AddOrUpdate(dto);
         public void Remove(ProdutoDTO dto) => _produtoServico.Remove(dto);
         public IEnumerable<ProdutoDTO> GetAll() => _produtoServico.GetAll();
+        public ProdutoDTO GetByEan(int ean) => _produtoServico.GetByEan(ean);
     }
 }
